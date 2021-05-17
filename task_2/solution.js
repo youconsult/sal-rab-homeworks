@@ -7,19 +7,20 @@ function calcShipping(sum, min, shipping) {
 
     // если productsSum равно 0,
     // то shippingPrice присвоить значение 0
-    if (productSum = 0) {
+    if (productSum == 0 || productSum >= freeShippingMinSum) {
         shippingPrice = 0;
+    }
 
     // если productsSum больше нуля, но меньше freeShippingMinSum,
     // то shippingPrice присвоить значение shipping
-    } else if (productSum > 0 && productSum < freeShippingMinSum) {
-        shippingPrice = shipping;
+    // } else if (productSum > 0 && productSum < freeShippingMinSum) {
+    //    shippingPrice = shipping;
 
     // если productsSum > или равен freeShippingMinSum,
     // то shippingPrice присвоить значение 0
-    } else if (productSum >= freeShippingMinSum){
-        shippingPrice = 0;
-    }
+    //} else if (productSum >= freeShippingMinSum){
+    //    shippingPrice = 0;
+    //}
 
     // Конец решения задания №2.1.
 
@@ -40,14 +41,14 @@ function calcDiscount(sum, min, discount) {
     // то присвойте discountPrice значение discountPart процентов от productsSum,
     // иначе присвойте discountPrice значения 0
     if (productsSum >= discountMinSum) {
-        discountPrice = discountPart/100*productsSum);
+        discountPrice = discountPart/100*productsSum;
     } else {
         discountPrice = 0;
     }
 
     // Конец решения задания №2.2.
 
-    return discountSum;
+    return discountPrice;
 }
 
 function calcInvoice({sum, discountMinSum, discountPart, shippingFreeMinSum, shippingPrice}) {
@@ -71,8 +72,8 @@ function calcInvoice({sum, discountMinSum, discountPart, shippingFreeMinSum, shi
     // создайте переменную freeShipping
     // запишите без использования if или любых других условий:
     // если shippingSum равно нулю, то freeShipping должна быть равна true, иначе freeShipping должна быть равна false
-    let freeShipping;
-    shippingSum = 0 ? freeShipping = true : freeShipping = false;
+    let freeShipping = shippingSum == 0;
+    //shippingSum == 0 ? freeShipping = true : freeShipping = false;
 
     // Конец решения задачи №2.3.
 
