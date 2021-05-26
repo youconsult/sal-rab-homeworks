@@ -5,6 +5,7 @@
 // - объект с адресом доставки: {street, house, entrance, floor, flat}
 // - список товаров в заказе
 // - стоимость заказа с учетом скидок и доставки
+
 // Как результат функции требуется вернуть JSON,
 // cформированный в соответствии с правилами:
 // Объект data содержит все данные
@@ -33,8 +34,8 @@
 //    }
 // }
 
-function sendRequest(name, phone, address, goods, sum) {
-    let data = {goods: [], order: {}};
+function sendRequest(name, phone, address, goods, sum) { // не понимаю, нужно ли раскрыть здесь объект "адрес"?
+    let data = {goods: [], order: {}}; // не понимаю, нужно ли именно здесь указать свойства из задания?
 
     let countOfGoods = goods.length;
 
